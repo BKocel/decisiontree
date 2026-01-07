@@ -38,3 +38,8 @@ graph_tree = plot_tree (model, feature_names=['Pclass','Sex','Age'],
                             class_names=['Survived','Not Survived'],
                             filled=True, rounded=True,fontsize=10) # rysowanie wykresu drzewa
 plt.show()
+
+tree_pred=model.predict(X_test)
+
+acc = accuracy_score(Y_real, tree_pred)
+print(acc)
