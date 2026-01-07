@@ -30,7 +30,7 @@ print("Dane po zmianach: \n", data.describe())
 
 X_train, X_test, Y_train, Y_real = model_selection.train_test_split(data,y, train_size=0.8) # przygotowywanie danych do trenowania modelu
 
-model = tree.DecisionTreeClassifier(max_depth=2) # Tworzenie modelu drzewa
+model = tree.DecisionTreeClassifier(max_depth=3) # Tworzenie modelu drzewa
 model.fit(X_train, Y_train) # dopasowanie danych do modelu
 
 plt.figure(figsize=(8,8)) # stworzenie obszaru wykresu
