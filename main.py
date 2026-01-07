@@ -22,7 +22,7 @@ labelencoder = preprocessing.LabelEncoder() #przekształcenie danych kategoryczn
 labelencoder.fit(data["Sex"])
 data["Sex"] = labelencoder.transform(data["Sex"])
 
-y = data['Survived'] # zmienna objaniona
+y = data['Survived'] # zmienna objaśniona
 data= data.drop(['PassengerId', 'Name', 'SibSp', 'Parch','Ticket','Fare','Cabin','Embarked','Survived'], axis=1) #wyrzucamy niepotrzebne dane
 data = data.fillna(data.mean()) # uzupełnia pustę komórki średnią
 print(data.isnull().sum())  #wyświetlenie pustych rekordów
