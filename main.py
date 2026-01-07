@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import pandas as pd
-from sklearn import preprocessing, tree, model_selection
+from sklearn import preprocessing, tree, model_selection, ensemble
 from sklearn.metrics import accuracy_score
 from sklearn.tree import plot_tree
 
@@ -43,3 +43,12 @@ tree_pred=model.predict(X_test)
 
 acc = accuracy_score(Y_real, tree_pred)
 print(acc)
+
+model_rf = ensemble.RandomForestClassifier(n_estimators=200)
+model_rf.fit(X_train, Y_train)
+Y_pred_rf=model_rf.predict(X_test)
+result_rf = pd.DataFrame({"Przezyli w rzeczywistoci": Y_real, "Przezyli w klasyfikacji": Y_pred_rf})
+print(result_rf)
+
+accuracy_rf = model_rf.score(X_test, Y_real)
+print (accuracy_rf)
